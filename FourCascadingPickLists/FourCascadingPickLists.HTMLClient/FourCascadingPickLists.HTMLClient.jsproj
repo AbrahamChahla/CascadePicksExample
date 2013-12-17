@@ -67,6 +67,9 @@
     <Content Include="Screens\AddEditMaster.lsml.js">
       <DependentUpon>AddEditMaster.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\PopupDialog.lsml.js">
+      <DependentUpon>PopupDialog.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -102,6 +105,7 @@
     <LightSwitchModel Include="Screens\BrowseItemThrees.lsml" />
     <LightSwitchModel Include="Screens\BrowseItemTwoes.lsml" />
     <LightSwitchModel Include="Screens\BrowseMasters.lsml" />
+    <LightSwitchModel Include="Screens\PopupDialog.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

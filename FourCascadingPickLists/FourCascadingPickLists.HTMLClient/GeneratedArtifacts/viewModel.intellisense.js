@@ -964,4 +964,184 @@
         RowTemplate_postRender: [$element, function () { return new lightSwitchApplication.BrowseMasters().findContentItem("RowTemplate"); }]
     });
 
+    lightSwitchApplication.PopupDialog.prototype._$contentItems = {
+        Tabs: {
+            _$class: msls.ContentItem,
+            _$name: "Tabs",
+            _$parentName: "RootContentItem",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        Group: {
+            _$class: msls.ContentItem,
+            _$name: "Group",
+            _$parentName: "Tabs",
+            screen: lightSwitchApplication.PopupDialog,
+            data: lightSwitchApplication.PopupDialog,
+            value: lightSwitchApplication.PopupDialog
+        },
+        Button1: {
+            _$class: msls.ContentItem,
+            _$name: "Button1",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        Button2: {
+            _$class: msls.ContentItem,
+            _$name: "Button2",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        Button3: {
+            _$class: msls.ContentItem,
+            _$name: "Button3",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        ResetButtons: {
+            _$class: msls.ContentItem,
+            _$name: "ResetButtons",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        Popups: {
+            _$class: msls.ContentItem,
+            _$name: "Popups",
+            _$parentName: "RootContentItem",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        Popup1: {
+            _$class: msls.ContentItem,
+            _$name: "Popup1",
+            _$parentName: "Popups",
+            screen: lightSwitchApplication.PopupDialog,
+            data: lightSwitchApplication.PopupDialog,
+            value: lightSwitchApplication.PopupDialog
+        },
+        PopupOk: {
+            _$class: msls.ContentItem,
+            _$name: "PopupOk",
+            _$parentName: "Popup1",
+            screen: lightSwitchApplication.PopupDialog
+        },
+        PopupCancel: {
+            _$class: msls.ContentItem,
+            _$name: "PopupCancel",
+            _$parentName: "Popup1",
+            screen: lightSwitchApplication.PopupDialog
+        }
+    };
+
+    msls._addEntryPoints(lightSwitchApplication.PopupDialog, {
+        /// <field>
+        /// Called when a new PopupDialog screen is created.
+        /// <br/>created(msls.application.PopupDialog screen)
+        /// </field>
+        created: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called before changes on an active PopupDialog screen are applied.
+        /// <br/>beforeApplyChanges(msls.application.PopupDialog screen)
+        /// </field>
+        beforeApplyChanges: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the Button1 method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        Button1_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the Button1 method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        Button1_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the Button2 method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        Button2_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the Button2 method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        Button2_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the Button3 method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        Button3_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the Button3 method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        Button3_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the ResetButtons method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        ResetButtons_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the ResetButtons method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        ResetButtons_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the PopupOk method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        PopupOk_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the PopupOk method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        PopupOk_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to determine if the PopupCancel method can be executed.
+        /// <br/>canExecute(msls.application.PopupDialog screen)
+        /// </field>
+        PopupCancel_canExecute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called to execute the PopupCancel method.
+        /// <br/>execute(msls.application.PopupDialog screen)
+        /// </field>
+        PopupCancel_execute: [lightSwitchApplication.PopupDialog],
+        /// <field>
+        /// Called after the Group content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Group_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("Group"); }],
+        /// <field>
+        /// Called after the Button1 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Button1_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("Button1"); }],
+        /// <field>
+        /// Called after the Button2 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Button2_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("Button2"); }],
+        /// <field>
+        /// Called after the Button3 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Button3_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("Button3"); }],
+        /// <field>
+        /// Called after the ResetButtons content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        ResetButtons_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("ResetButtons"); }],
+        /// <field>
+        /// Called after the Popup1 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Popup1_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("Popup1"); }],
+        /// <field>
+        /// Called after the PopupOk content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        PopupOk_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("PopupOk"); }],
+        /// <field>
+        /// Called after the PopupCancel content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        PopupCancel_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("PopupCancel"); }]
+    });
+
 }(msls.application));

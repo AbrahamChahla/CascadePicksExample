@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Properties\Client.lsml" Checksum="14C132F70406FCFBB707F3241603AC0F3EAE959244240391CFB9CBD53F2BDBB3" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Properties\Proxies.lsml" Checksum="EAA801DE9A94111B797BD24AC1A59113A7462684C5E0D50F9CEB22331480A6B4" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\AddEditItemFour.lsml" Checksum="2C9A765FBBE3B370EB749835410303D4A52EBA1876C5CFDB6890C7AAA48AF16E" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\AddEditItemOne.lsml" Checksum="C7204439ADE5542E13D37CA7AD83BE09C8EC5D0118A92EA85E6D43DDD990C601" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\AddEditItemThree.lsml" Checksum="368FCDA84A9017DEEE403E9D25E1A5022E52EF42CF10F72B7AFC5BBDF688C42B" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\AddEditItemTwo.lsml" Checksum="1B8699E9078F0E39AA46B08924D43D8E937786B03ED3E18A7EBA15D0D0B6B62F" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\AddEditMaster.lsml" Checksum="E7D1A22F3AAB5448EA5FA0550BF96DBFE6B25C5051898E5DF0814EE959251E5B" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\BrowseItemFours.lsml" Checksum="0FDAEA6C28A27F1809D285A0D1A6E5242528C620897476C04E219683420E4FD6" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\BrowseItemOnes.lsml" Checksum="D3B1E50FE1C7F7910513062280A6BEE2F6A643AFA7C4ED5BF82894A957BEA9DF" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\BrowseItemThrees.lsml" Checksum="4738425E9D78137DCBF405C5A9DEBDEB94B4F335C679262C36BF3D006C8AB4E7" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\BrowseItemTwoes.lsml" Checksum="54D90DB79DF02653D02C18D9A1CCDE399EA116534457891A919DC826981B78AC" />
+    <Document FullPath="C:\Users\Dale\Documents\Visual Studio 2013\Projects\Junk\FourCascadingPickLists\FourCascadingPickLists\FourCascadingPickLists.HTMLClient\Screens\BrowseMasters.lsml" Checksum="7393C3594425642ED428670FF3B7DDFE31E89779AE192E8DA39AD1CDED9EE132" />
+  </Documents>
+</ModelDocumentManifest>

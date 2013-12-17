@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="ItemFours" EntityType="ApplicationDataStore.ItemFour" store:Type="Tables" Schema="dbo" Table="ItemFours" />
+    <EntitySet Name="ItemOnes" EntityType="ApplicationDataStore.ItemOne" store:Type="Tables" Schema="dbo" Table="ItemOnes" />
+    <EntitySet Name="ItemThrees" EntityType="ApplicationDataStore.ItemThree" store:Type="Tables" Schema="dbo" Table="ItemThrees" />
+    <EntitySet Name="ItemTwoes" EntityType="ApplicationDataStore.ItemTwo" store:Type="Tables" Schema="dbo" Table="ItemTwoes" />
+    <EntitySet Name="Masters" EntityType="ApplicationDataStore.Master" store:Type="Tables" Schema="dbo" Table="Masters" />
+    <AssociationSet Name="ItemFour_Master" Association="ApplicationDataStore.ItemFour_Master">
+      <End Role="ItemFour" EntitySet="ItemFours" />
+      <End Role="Master" EntitySet="Masters" />
+    </AssociationSet>
+    <AssociationSet Name="ItemTwo_ItemOne" Association="ApplicationDataStore.ItemTwo_ItemOne">
+      <End Role="ItemOne" EntitySet="ItemOnes" />
+      <End Role="ItemTwo" EntitySet="ItemTwoes" />
+    </AssociationSet>
+    <AssociationSet Name="ItemFour_ItemThree" Association="ApplicationDataStore.ItemFour_ItemThree">
+      <End Role="ItemThree" EntitySet="ItemThrees" />
+      <End Role="ItemFour" EntitySet="ItemFours" />
+    </AssociationSet>
+    <AssociationSet Name="ItemThree_ItemTwo" Association="ApplicationDataStore.ItemThree_ItemTwo">
+      <End Role="ItemTwo" EntitySet="ItemTwoes" />
+      <End Role="ItemThree" EntitySet="ItemThrees" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ItemFour">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ItemFour_ItemThree" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemOne">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ItemThree">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ItemThree_ItemTwo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemTwo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ItemTwo_ItemOne" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ItemFour_Master" Type="int" />
+  </EntityType>
+  <Association Name="ItemFour_Master">
+    <End Role="ItemFour" Type="ApplicationDataStore.ItemFour" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Master" Type="ApplicationDataStore.Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemFour">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Master">
+        <PropertyRef Name="ItemFour_Master" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemTwo_ItemOne">
+    <End Role="ItemOne" Type="ApplicationDataStore.ItemOne" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ItemTwo" Type="ApplicationDataStore.ItemTwo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemOne">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemTwo">
+        <PropertyRef Name="ItemTwo_ItemOne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemFour_ItemThree">
+    <End Role="ItemThree" Type="ApplicationDataStore.ItemThree" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ItemFour" Type="ApplicationDataStore.ItemFour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemThree">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemFour">
+        <PropertyRef Name="ItemFour_ItemThree" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemThree_ItemTwo">
+    <End Role="ItemTwo" Type="ApplicationDataStore.ItemTwo" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ItemThree" Type="ApplicationDataStore.ItemThree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemTwo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemThree">
+        <PropertyRef Name="ItemThree_ItemTwo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

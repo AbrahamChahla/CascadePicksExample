@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ItemFour">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ItemFour_ItemThree" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ItemThree" Relationship="LightSwitchApplication.ItemFour_ItemThree" ToRole="ItemThree" FromRole="ItemFour" />
+    <NavigationProperty Name="Masters" Relationship="LightSwitchApplication.ItemFour_Master" ToRole="Master" FromRole="ItemFour" />
+  </EntityType>
+  <EntityType Name="ItemOne">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ItemTwoes" Relationship="LightSwitchApplication.ItemTwo_ItemOne" ToRole="ItemTwo" FromRole="ItemOne" />
+  </EntityType>
+  <EntityType Name="ItemThree">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ItemThree_ItemTwo" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ItemFours" Relationship="LightSwitchApplication.ItemFour_ItemThree" ToRole="ItemFour" FromRole="ItemThree" />
+    <NavigationProperty Name="ItemTwo" Relationship="LightSwitchApplication.ItemThree_ItemTwo" ToRole="ItemTwo" FromRole="ItemThree" />
+  </EntityType>
+  <EntityType Name="ItemTwo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ItemTwo_ItemOne" Type="Edm.Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ItemThrees" Relationship="LightSwitchApplication.ItemThree_ItemTwo" ToRole="ItemThree" FromRole="ItemTwo" />
+    <NavigationProperty Name="ItemOne" Relationship="LightSwitchApplication.ItemTwo_ItemOne" ToRole="ItemOne" FromRole="ItemTwo" />
+  </EntityType>
+  <EntityType Name="Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ItemFour_Master" Type="Edm.Int32" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ItemFour" Relationship="LightSwitchApplication.ItemFour_Master" ToRole="ItemFour" FromRole="Master" />
+  </EntityType>
+  <Association Name="ItemFour_Master">
+    <End Role="ItemFour" Type="LightSwitchApplication.ItemFour" Multiplicity="0..1" />
+    <End Role="Master" Type="LightSwitchApplication.Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemFour">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Master">
+        <PropertyRef Name="ItemFour_Master" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemTwo_ItemOne">
+    <End Role="ItemOne" Type="LightSwitchApplication.ItemOne" Multiplicity="1" />
+    <End Role="ItemTwo" Type="LightSwitchApplication.ItemTwo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemOne">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemTwo">
+        <PropertyRef Name="ItemTwo_ItemOne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemFour_ItemThree">
+    <End Role="ItemThree" Type="LightSwitchApplication.ItemThree" Multiplicity="1" />
+    <End Role="ItemFour" Type="LightSwitchApplication.ItemFour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemThree">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemFour">
+        <PropertyRef Name="ItemFour_ItemThree" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemThree_ItemTwo">
+    <End Role="ItemTwo" Type="LightSwitchApplication.ItemTwo" Multiplicity="1" />
+    <End Role="ItemThree" Type="LightSwitchApplication.ItemThree" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemTwo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemThree">
+        <PropertyRef Name="ItemThree_ItemTwo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="ItemFours" EntityType="LightSwitchApplication.ItemFour" />
+    <EntitySet Name="ItemOnes" EntityType="LightSwitchApplication.ItemOne" />
+    <EntitySet Name="ItemThrees" EntityType="LightSwitchApplication.ItemThree" />
+    <EntitySet Name="ItemTwoes" EntityType="LightSwitchApplication.ItemTwo" />
+    <EntitySet Name="Masters" EntityType="LightSwitchApplication.Master" />
+    <AssociationSet Name="ItemFour_Master" Association="LightSwitchApplication.ItemFour_Master">
+      <End Role="ItemFour" EntitySet="ItemFours" />
+      <End Role="Master" EntitySet="Masters" />
+    </AssociationSet>
+    <AssociationSet Name="ItemTwo_ItemOne" Association="LightSwitchApplication.ItemTwo_ItemOne">
+      <End Role="ItemOne" EntitySet="ItemOnes" />
+      <End Role="ItemTwo" EntitySet="ItemTwoes" />
+    </AssociationSet>
+    <AssociationSet Name="ItemFour_ItemThree" Association="LightSwitchApplication.ItemFour_ItemThree">
+      <End Role="ItemThree" EntitySet="ItemThrees" />
+      <End Role="ItemFour" EntitySet="ItemFours" />
+    </AssociationSet>
+    <AssociationSet Name="ItemThree_ItemTwo" Association="LightSwitchApplication.ItemThree_ItemTwo">
+      <End Role="ItemTwo" EntitySet="ItemTwoes" />
+      <End Role="ItemThree" EntitySet="ItemThrees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

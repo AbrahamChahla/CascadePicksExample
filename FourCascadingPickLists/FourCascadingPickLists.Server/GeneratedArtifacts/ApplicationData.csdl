@@ -64,6 +64,8 @@
     </Key>
     <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Stuff1" Type="Edm.String" MaxLength="255" />
+    <Property Name="Stuff2" Type="Edm.String" MaxLength="255" />
     <Property Name="ItemFour_Master" Type="Edm.Int32" />
     <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
     <Property Name="Created" Type="Edm.DateTimeOffset" />

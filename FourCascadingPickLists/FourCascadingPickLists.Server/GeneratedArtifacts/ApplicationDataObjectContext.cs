@@ -1404,6 +1404,54 @@ namespace LightSwitchApplication.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String Stuff1
+        {
+            get
+            {
+                return _Stuff1;
+            }
+            set
+            {
+                OnStuff1Changing(value);
+                ReportPropertyChanging("Stuff1");
+                _Stuff1 = value;
+                ReportPropertyChanged("Stuff1");
+                OnStuff1Changed();
+            }
+        }
+        private global::System.String _Stuff1;
+        partial void OnStuff1Changing(global::System.String value);
+        partial void OnStuff1Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Stuff2
+        {
+            get
+            {
+                return _Stuff2;
+            }
+            set
+            {
+                OnStuff2Changing(value);
+                ReportPropertyChanging("Stuff2");
+                _Stuff2 = value;
+                ReportPropertyChanged("Stuff2");
+                OnStuff2Changed();
+            }
+        }
+        private global::System.String _Stuff2;
+        partial void OnStuff2Changing(global::System.String value);
+        partial void OnStuff2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> ItemFour_Master
         {
             get

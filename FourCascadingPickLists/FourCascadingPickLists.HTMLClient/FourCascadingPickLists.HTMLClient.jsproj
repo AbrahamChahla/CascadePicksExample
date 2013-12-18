@@ -106,6 +106,7 @@
     <LightSwitchModel Include="Screens\BrowseItemTwoes.lsml" />
     <LightSwitchModel Include="Screens\BrowseMasters.lsml" />
     <LightSwitchModel Include="Screens\PopupDialog.lsml" />
+    <LightSwitchModel Include="Screens\PopupParameters.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

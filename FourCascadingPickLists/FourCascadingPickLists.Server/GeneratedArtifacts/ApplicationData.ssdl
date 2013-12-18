@@ -80,6 +80,8 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Stuff1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Stuff2" Type="nvarchar" MaxLength="255" />
     <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
     <Property Name="Created" Type="datetimeoffset" />
     <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />

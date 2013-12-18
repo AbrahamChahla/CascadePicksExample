@@ -61,6 +61,8 @@
         <MappingFragment StoreEntitySet="Masters">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Stuff1" ColumnName="Stuff1" />
+          <ScalarProperty Name="Stuff2" ColumnName="Stuff2" />
           <ScalarProperty Name="ItemFour_Master" ColumnName="ItemFour_Master" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Created" ColumnName="Created" />

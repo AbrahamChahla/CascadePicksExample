@@ -441,6 +441,22 @@
             data: lightSwitchApplication.Master,
             value: String
         },
+        Stuff1: {
+            _$class: msls.ContentItem,
+            _$name: "Stuff1",
+            _$parentName: "left",
+            screen: lightSwitchApplication.AddEditMaster,
+            data: lightSwitchApplication.Master,
+            value: String
+        },
+        Stuff2: {
+            _$class: msls.ContentItem,
+            _$name: "Stuff2",
+            _$parentName: "left",
+            screen: lightSwitchApplication.AddEditMaster,
+            data: lightSwitchApplication.Master,
+            value: String
+        },
         right: {
             _$class: msls.ContentItem,
             _$name: "right",
@@ -552,6 +568,16 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         Name_postRender: [$element, function () { return new lightSwitchApplication.AddEditMaster().findContentItem("Name"); }],
+        /// <field>
+        /// Called after the Stuff1 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Stuff1_postRender: [$element, function () { return new lightSwitchApplication.AddEditMaster().findContentItem("Stuff1"); }],
+        /// <field>
+        /// Called after the Stuff2 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Stuff2_postRender: [$element, function () { return new lightSwitchApplication.AddEditMaster().findContentItem("Stuff2"); }],
         /// <field>
         /// Called after the right content item has been rendered.
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
@@ -1142,6 +1168,86 @@
         /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
         /// </field>
         PopupCancel_postRender: [$element, function () { return new lightSwitchApplication.PopupDialog().findContentItem("PopupCancel"); }]
+    });
+
+    lightSwitchApplication.PopupParameters.prototype._$contentItems = {
+        Tabs: {
+            _$class: msls.ContentItem,
+            _$name: "Tabs",
+            _$parentName: "RootContentItem",
+            screen: lightSwitchApplication.PopupParameters
+        },
+        Group: {
+            _$class: msls.ContentItem,
+            _$name: "Group",
+            _$parentName: "Tabs",
+            screen: lightSwitchApplication.PopupParameters,
+            data: lightSwitchApplication.PopupParameters,
+            value: lightSwitchApplication.PopupParameters
+        },
+        pName: {
+            _$class: msls.ContentItem,
+            _$name: "pName",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupParameters,
+            data: lightSwitchApplication.PopupParameters,
+            value: String
+        },
+        pStuff1: {
+            _$class: msls.ContentItem,
+            _$name: "pStuff1",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupParameters,
+            data: lightSwitchApplication.PopupParameters,
+            value: String
+        },
+        pStuff2: {
+            _$class: msls.ContentItem,
+            _$name: "pStuff2",
+            _$parentName: "Group",
+            screen: lightSwitchApplication.PopupParameters,
+            data: lightSwitchApplication.PopupParameters,
+            value: String
+        },
+        Popups: {
+            _$class: msls.ContentItem,
+            _$name: "Popups",
+            _$parentName: "RootContentItem",
+            screen: lightSwitchApplication.PopupParameters
+        }
+    };
+
+    msls._addEntryPoints(lightSwitchApplication.PopupParameters, {
+        /// <field>
+        /// Called when a new PopupParameters screen is created.
+        /// <br/>created(msls.application.PopupParameters screen)
+        /// </field>
+        created: [lightSwitchApplication.PopupParameters],
+        /// <field>
+        /// Called before changes on an active PopupParameters screen are applied.
+        /// <br/>beforeApplyChanges(msls.application.PopupParameters screen)
+        /// </field>
+        beforeApplyChanges: [lightSwitchApplication.PopupParameters],
+        /// <field>
+        /// Called after the Group content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        Group_postRender: [$element, function () { return new lightSwitchApplication.PopupParameters().findContentItem("Group"); }],
+        /// <field>
+        /// Called after the pName content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        pName_postRender: [$element, function () { return new lightSwitchApplication.PopupParameters().findContentItem("pName"); }],
+        /// <field>
+        /// Called after the pStuff1 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        pStuff1_postRender: [$element, function () { return new lightSwitchApplication.PopupParameters().findContentItem("pStuff1"); }],
+        /// <field>
+        /// Called after the pStuff2 content item has been rendered.
+        /// <br/>postRender(HTMLElement element, msls.ContentItem contentItem)
+        /// </field>
+        pStuff2_postRender: [$element, function () { return new lightSwitchApplication.PopupParameters().findContentItem("pStuff2"); }]
     });
 
 }(msls.application));

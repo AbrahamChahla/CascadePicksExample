@@ -183,6 +183,12 @@ window.myapp = msls.application;
         /// <field name="Name" type="String">
         /// Gets or sets the name for this master.
         /// </field>
+        /// <field name="Stuff1" type="String">
+        /// Gets or sets the stuff1 for this master.
+        /// </field>
+        /// <field name="Stuff2" type="String">
+        /// Gets or sets the stuff2 for this master.
+        /// </field>
         /// <field name="ItemFour" type="msls.application.ItemFour">
         /// Gets or sets the itemFour for this master.
         /// </field>
@@ -299,6 +305,8 @@ window.myapp = msls.application;
         Master: $defineEntity(Master, [
             { name: "Id", type: Number },
             { name: "Name", type: String },
+            { name: "Stuff1", type: String },
+            { name: "Stuff2", type: String },
             { name: "ItemFour", kind: "reference", type: ItemFour },
             { name: "CreatedBy", type: String, isReadOnly: true },
             { name: "Created", type: Date, isReadOnly: true },

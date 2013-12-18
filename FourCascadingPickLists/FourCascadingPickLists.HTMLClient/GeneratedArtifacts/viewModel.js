@@ -271,6 +271,34 @@
         $Screen.call(this, dataWorkspace, "PopupDialog", parameters);
     }
 
+    function PopupParameters(parameters, dataWorkspace) {
+        /// <summary>
+        /// Represents the PopupParameters screen.
+        /// </summary>
+        /// <param name="parameters" type="Array">
+        /// An array of screen parameter values.
+        /// </param>
+        /// <param name="dataWorkspace" type="msls.application.DataWorkspace" optional="true">
+        /// An existing data workspace for this screen to use. By default, a new data workspace is created.
+        /// </param>
+        /// <field name="pName" type="String">
+        /// Gets or sets the pName for this screen.
+        /// </field>
+        /// <field name="pStuff1" type="String">
+        /// Gets or sets the pStuff1 for this screen.
+        /// </field>
+        /// <field name="pStuff2" type="String">
+        /// Gets or sets the pStuff2 for this screen.
+        /// </field>
+        /// <field name="details" type="msls.application.PopupParameters.Details">
+        /// Gets the details for this screen.
+        /// </field>
+        if (!dataWorkspace) {
+            dataWorkspace = new lightSwitchApplication.DataWorkspace();
+        }
+        $Screen.call(this, dataWorkspace, "PopupParameters", parameters);
+    }
+
     msls._addToNamespace("msls.application", {
 
         AddEditItemFour: $defineScreen(AddEditItemFour, [
@@ -384,6 +412,13 @@
             { name: "ResetButtons" },
             { name: "PopupOk" },
             { name: "PopupCancel" }
+        ]),
+
+        PopupParameters: $defineScreen(PopupParameters, [
+            { name: "pName", kind: "local", type: String },
+            { name: "pStuff1", kind: "local", type: String },
+            { name: "pStuff2", kind: "local", type: String }
+        ], [
         ]),
 
         showAddEditItemFour: $defineShowScreen(function showAddEditItemFour(ItemFour, options) {
@@ -516,6 +551,18 @@
             /// <returns type="WinJS.Promise" />
             var parameters = Array.prototype.slice.call(arguments, 0, 0);
             return lightSwitchApplication.showScreen("PopupDialog", parameters, options);
+        }),
+
+        showPopupParameters: $defineShowScreen(function showPopupParameters(pName, pStuff1, pStuff2, options) {
+            /// <summary>
+            /// Asynchronously navigates forward to the PopupParameters screen.
+            /// </summary>
+            /// <param name="options" optional="true">
+            /// An object that provides one or more of the following options:<br/>- beforeShown: a function that is called after boundary behavior has been applied but before the screen is shown.<br/>+ Signature: beforeShown(screen)<br/>- afterClosed: a function that is called after boundary behavior has been applied and the screen has been closed.<br/>+ Signature: afterClosed(screen, action : msls.NavigateBackAction)
+            /// </param>
+            /// <returns type="WinJS.Promise" />
+            var parameters = Array.prototype.slice.call(arguments, 0, 3);
+            return lightSwitchApplication.showScreen("PopupParameters", parameters, options);
         })
 
     });
